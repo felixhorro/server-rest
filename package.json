@@ -1,0 +1,19 @@
+{
+  "name": "server-rest",
+  "version": "0.1.0",
+  "main": "index.js",
+  "repository": "/home/RED/fhorro/Dropbox/Privado/lab/server-rest/",
+  "author": "Félix Horro Pita <fhorro@corunet.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "1.11.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.2"
+  },
+  "scripts": {
+    "start": "node server.js"
+  }
+}
