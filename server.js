@@ -12,11 +12,10 @@ app.use(bodyParser.json());
 const collectionById = {};
 
 
-app.route('/collection:cid/')
+app.route('/collection/:cid/')
 	.all((req, res, next) => {
 		const { cid } = req.params;
 		req.collection = collectionById[cid] = collectionById[cid] || createCollection();
-		//setTimeout(() => next(), 3000);
 		next();
 	})
 	.get((req, res) => {
@@ -26,11 +25,10 @@ app.route('/collection:cid/')
 		res.status(201).json(req.collection.post(req.body)).end();
 	});
 
-app.route('/collection:cid/:id')
+app.route('/collection/:cid/:id')
 	.all((req, res, next) => {
 		const { cid } = req.params;
 		req.collection = collectionById[cid] = collectionById[cid] || createCollection();
-		//setTimeout(() => next(), 3000);
 		next();
 	})
 	.put((req, res) => {
