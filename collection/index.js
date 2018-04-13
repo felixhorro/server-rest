@@ -67,10 +67,7 @@ module.exports = () => ({
 			})
 		} else {
 			const id = nextId++;
-			return byId[id] = {
-				...item,
-				id
-			};
+			return byId[id] = Object.create({}, item, { id });
 		}
 	},
 	put: (item) => {
