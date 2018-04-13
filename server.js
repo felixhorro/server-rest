@@ -7,7 +7,8 @@ const createCollection = require('./collection');
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
-
+// Parametrized delay
+app.use((req, res, next) => setTimeout(next, +req.query.delay || 0));
 
 const collectionById = {};
 
