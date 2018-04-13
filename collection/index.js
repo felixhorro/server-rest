@@ -57,7 +57,7 @@ module.exports = () => ({
 				throw new CollectionException({ code: 404 });
 			}
 		} else {
-			return Object.values(byId);
+			return Object.keys(byId).map(id => byId[id]);
 		}
 	},	
 	post: (item) => {
