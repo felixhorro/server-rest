@@ -80,11 +80,11 @@ module.exports = () => ({
 			});
 		}
 
-		if (!byId[id]) {
+		if (!byId[item.id]) {
 			throw new CollectionException({ code: 404 });
 		}
 
-		return byId[id] = item;
+		return byId[item.id] = item;
 	},
 	delete: (id) => {
 		if (!item.id) {
