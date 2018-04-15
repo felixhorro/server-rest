@@ -33,7 +33,7 @@ app.route('/collection/:cid/:id')
 		next();
 	})
 	.put((req, res) => {
-		if (req.body.id !== req.params.id) {
+		if (req.body.id !== +req.params.id) {
 			res.status(400).end(`Ids don't match.`);
 		} else {
 			res.json(req.collection.put(req.body)).end();
