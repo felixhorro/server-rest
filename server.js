@@ -4,6 +4,10 @@ const bodyParser = require('body-parser');
 const CollectionException = require('./collection/Exception');
 const createCollection = require('./collection');
 
+const PORT = Number.isInteger(process.argv[2]) && process.argv[2] > 0
+	? +process.argv[2]
+	: 8080;	
+
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
@@ -45,4 +49,4 @@ app.route('/collection/:cid/:id')
 	})
 ;
 
-app.listen(8080, () => console.log('Listen...'));
+app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
