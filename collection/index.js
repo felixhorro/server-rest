@@ -87,12 +87,6 @@ module.exports = () => ({
 		return byId[item.id] = item;
 	},
 	delete: (id) => {
-		if (!item.id) {
-			throw new Error({
-				code: 400, message: `Can't delete an item without id.`
-			});
-		}
-
 		if (!byId[id]) {
 			throw new CollectionException({ code: 404 });
 		}
