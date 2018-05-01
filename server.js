@@ -3,6 +3,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const CollectionException = require('./collection/Exception');
 const createCollection = require('./collection');
+const initialData = require('./data/collection.json');
 
 const PORT = Number.isInteger(process.argv[2]) && process.argv[2] > 0
 	? +process.argv[2]
@@ -20,7 +21,7 @@ const collectionById = {};
 app.route('/collection/:cid/')
 	.all((req, res, next) => {
 		const { cid } = req.params;
-		req.collection = collectionById[cid] = collectionById[cid] || createCollection();
+		req.collection = collectionById[cid] = collectionById[cid] || createCollection(initialData);
 		next();
 	})
 	.get((req, res) => {
