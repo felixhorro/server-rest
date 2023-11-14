@@ -1,3 +1,7 @@
+# ⚠️ ARCHIVED ⚠️
+This repo is archived and no longer maintained. You should not use it. There are many other better (and more secured) solutions out there. Go find them! 😜
+
+
 # Server rest
 Simple rest server that serves collections by Id
 
